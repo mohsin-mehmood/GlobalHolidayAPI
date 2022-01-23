@@ -1,9 +1,0 @@
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\bin\Debug\netstandard2.1\GlobalPublicHolidays.Core.deps.json
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\bin\Debug\netstandard2.1\GlobalPublicHolidays.Core.dll
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\bin\Debug\netstandard2.1\GlobalPublicHolidays.Core.pdb
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\obj\Debug\netstandard2.1\GlobalPublicHolidays.Core.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\obj\Debug\netstandard2.1\GlobalPublicHolidays.Core.AssemblyInfoInputs.cache
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\obj\Debug\netstandard2.1\GlobalPublicHolidays.Core.AssemblyInfo.cs
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\obj\Debug\netstandard2.1\GlobalPublicHolidays.Core.csproj.CoreCompileInputs.cache
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\obj\Debug\netstandard2.1\GlobalPublicHolidays.Core.dll
-C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Core\obj\Debug\netstandard2.1\GlobalPublicHolidays.Core.pdb
