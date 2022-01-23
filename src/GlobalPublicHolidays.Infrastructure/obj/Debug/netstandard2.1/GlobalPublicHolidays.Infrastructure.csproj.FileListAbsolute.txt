@@ -1,0 +1,15 @@
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.csproj.AssemblyReference.cache
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.AssemblyInfoInputs.cache
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.AssemblyInfo.cs
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\bin\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.deps.json
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\bin\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.dll
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\bin\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.pdb
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\bin\Debug\netstandard2.1\GlobalPublicHolidays.Application.dll
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\bin\Debug\netstandard2.1\GlobalPublicHolidays.Application.pdb
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.csproj.CopyComplete
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.dll
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\obj\Debug\netstandard2.1\GlobalPublicHolidays.Infrastructure.pdb
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\bin\Debug\netstandard2.1\GlobalPublicHolidays.Domain.dll
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Infrastructure\bin\Debug\netstandard2.1\GlobalPublicHolidays.Domain.pdb

@@ -1,0 +1,13 @@
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.AssemblyInfoInputs.cache
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.AssemblyInfo.cs
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.csproj.CoreCompileInputs.cache
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\bin\Debug\netstandard2.1\GlobalPublicHolidays.Application.deps.json
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\bin\Debug\netstandard2.1\GlobalPublicHolidays.Application.dll
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\bin\Debug\netstandard2.1\GlobalPublicHolidays.Application.pdb
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.dll
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.pdb
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.csproj.AssemblyReference.cache
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\bin\Debug\netstandard2.1\GlobalPublicHolidays.Domain.dll
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\bin\Debug\netstandard2.1\GlobalPublicHolidays.Domain.pdb
+C:\Projects\GlobalPublicHolidays\src\GlobalPublicHolidays.Application\obj\Debug\netstandard2.1\GlobalPublicHolidays.Application.csproj.CopyComplete
