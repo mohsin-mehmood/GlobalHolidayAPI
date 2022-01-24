@@ -1,4 +1,5 @@
 ﻿using GlobalPublicHolidays.Application.Common.Models;
+using GlobalPublicHolidays.Application.Country.Queries;
 using GlobalPublicHolidays.Domain.Entities;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,11 @@ namespace GlobalPublicHolidays.Application.Common.Mappings
                 .ForMember(dest => dest.Regions, opt => opt.MapFrom(src =>
                                        src.Regions.Select(r => new CountryRegion
                                        { CountryCode = src.CountryCode, RegionName = r })));
+
+
+            CreateMap<Domain.Entities.Country, CountryDto>()
+              .ForMember(c => c.HolidayTypes, o => o.MapFrom(src => src.HolidayTypes.Select(ht => ht.Name)))
+              .ForMember(c => c.Regions, o => o.MapFrom(src => src.Regions.Select(r => r.RegionName)));
         }
     }
 }

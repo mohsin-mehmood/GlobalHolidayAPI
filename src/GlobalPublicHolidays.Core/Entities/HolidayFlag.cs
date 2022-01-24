@@ -8,7 +8,8 @@ namespace GlobalPublicHolidays.Domain.Entities
         SHOP_CLOSING_DAY = 1,
         REGIONAL_HOLIDAY = 2,
         ADDITIONAL_HOLIDAY = 3,
-        PART_DAY_HOLIDAY = 4
+        PART_DAY_HOLIDAY = 4,
+        BANK_HOLIDAY = 5
     }
     public class HolidayFlag
     {

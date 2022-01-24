@@ -4,14 +4,16 @@ using GlobalPublicHolidays.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GlobalPublicHolidays.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220124153025_HoildayRegionOptional")]
+    partial class HoildayRegionOptional
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,9 +105,9 @@ namespace GlobalPublicHolidays.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("HolidayTypeId");
 
-                    b.HasIndex("Year");
-
-                    b.HasIndex("CountryCode", "Region");
+                    b.HasIndex("CountryCode", "Year", "Region")
+                        .IsUnique()
+                        .HasFilter("[Region] IS NOT NULL");
 
                     b.ToTable("Holidays");
                 });
@@ -144,11 +146,6 @@ namespace GlobalPublicHolidays.Infrastructure.Persistence.Migrations
                         {
                             Id = 4,
                             Name = "PART_DAY_HOLIDAY"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "BANK_HOLIDAY"
                         });
                 });
 

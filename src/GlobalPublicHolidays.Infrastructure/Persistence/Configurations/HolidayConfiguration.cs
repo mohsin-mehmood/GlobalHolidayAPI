@@ -9,7 +9,10 @@ namespace GlobalPublicHolidays.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Holiday> builder)
         {
 
-            builder.HasIndex(h => new { h.CountryCode, h.Year, h.Region }).IsUnique();
+            builder.Property(h => h.Region).IsRequired(false);
+
+            builder.HasIndex(h => h.Year);
+            builder.HasIndex(h => new { h.CountryCode, h.Region });
 
             builder.Property(h => h.HolidayTypeId).HasConversion<int>();
 

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using GlobalPublicHolidays.Application.Common.Interfaces;
-using GlobalPublicHolidays.Application.Common.Models;
+using GlobalPublicHolidays.Domain.Entities;
 using MediatR;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GlobalPublicHolidays.Application.Holidays.Commands
 {
-    public class LoadYearlyHolidaysDataCommand : IRequest<IEnumerable<HolidayApiResponseModel>>
+    public class LoadYearlyHolidaysDataCommand : IRequest<IEnumerable<Holiday>>
     {
         public string CountryCode { get; set; }
         public int Year { get; set; }
@@ -18,7 +18,7 @@ namespace GlobalPublicHolidays.Application.Holidays.Commands
     }
 
 
-    public class LoadYearlyHolidaysDataCommandHandler : IRequestHandler<LoadYearlyHolidaysDataCommand, IEnumerable<HolidayApiResponseModel>>
+    public class LoadYearlyHolidaysDataCommandHandler : IRequestHandler<LoadYearlyHolidaysDataCommand, IEnumerable<Holiday>>
     {
         private readonly IHolidaysDataProvider _holidaysDataProvider;
         private readonly IMapper _mapper;
@@ -33,7 +33,7 @@ namespace GlobalPublicHolidays.Application.Holidays.Commands
             _appDbContext = appDbContext;
         }
 
-        public async Task<IEnumerable<HolidayApiResponseModel>> Handle(LoadYearlyHolidaysDataCommand request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Holiday>> Handle(LoadYearlyHolidaysDataCommand request, CancellationToken cancellationToken)
         {
             var countryHolidays = await _holidaysDataProvider.GetCountryYearlyHolidays(request.CountryCode, request.Year, request.Region);
 
@@ -41,7 +41,7 @@ namespace GlobalPublicHolidays.Application.Holidays.Commands
             var holidayFlags = _appDbContext.HolidayFlags.ToList();
 
             // Transform API response into domain models
-            var countryHolidayEntities = _mapper.Map<IEnumerable<Domain.Entities.Holiday>>(countryHolidays,
+            var countryHolidayEntities = _mapper.Map<IEnumerable<Holiday>>(countryHolidays,
                 opts =>
                 {
                     opts.Items["CountryCode"] = request.CountryCode;
@@ -54,10 +54,10 @@ namespace GlobalPublicHolidays.Application.Holidays.Commands
 
             _appDbContext.Holidays.AddRange(countryHolidayEntities);
 
-            await _appDbContext.SaveChangesAsync(cancellationToken);
+            var result = await _appDbContext.SaveChangesAsync(cancellationToken);
 
 
-            return countryHolidays;
+            return result > 0 ? countryHolidayEntities : Enumerable.Empty<Holiday>();
         }
     }
 }

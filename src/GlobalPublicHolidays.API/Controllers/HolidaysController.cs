@@ -1,4 +1,4 @@
-﻿using GlobalPublicHolidays.Application.Holidays.Queries;
+﻿using GlobalPublicHolidays.Application.Holidays.Queries.CountryYearly;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
