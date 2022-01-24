@@ -34,9 +34,6 @@ namespace GlobalPublicHolidays.Application.Country.Commands
             var supportedCountries = await _holidaysDataProvider.GetSupportedCountriesAsync();
 
 
-
-            // TODO: Load in DB
-
             var holidayTypes = _appDbContext.HolidayTypes.ToList();
 
 
@@ -44,12 +41,6 @@ namespace GlobalPublicHolidays.Application.Country.Commands
             var countryEntities = _mapper.Map<IEnumerable<Domain.Entities.Country>>(supportedCountries,
                 opts => opts.Items["holidayTypes"] = holidayTypes);
 
-
-            //foreach (var country in countryEntities)
-            //{
-            //    _appDbContext.Context.Entry(country).State = EntityState.Detached;
-            //    _appDbContext.Countries.Add(country);
-            //}
 
             _appDbContext.Countries.AddRange(countryEntities);
 

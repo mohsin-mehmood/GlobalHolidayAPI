@@ -21,7 +21,7 @@ namespace GlobalPublicHolidays.Infrastructure.Services
         public async Task<IEnumerable<HolidayApiResponseModel>> GetCountryYearlyHolidays(string countryCode, int year, string region)
         {
 
-            var apiQuery = "?action=getHolidaysForYear&holidayType=all&country={countryCode}&year={year}";
+            var apiQuery = $"?action=getHolidaysForYear&holidayType=all&country={countryCode}&year={year}";
 
             if (!string.IsNullOrWhiteSpace(region))
                 apiQuery += $"&region={region}";

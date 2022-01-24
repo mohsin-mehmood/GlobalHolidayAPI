@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Holidays\Queries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GlobalPublicHolidays.Core\GlobalPublicHolidays.Domain.csproj" />
   </ItemGroup>
 
