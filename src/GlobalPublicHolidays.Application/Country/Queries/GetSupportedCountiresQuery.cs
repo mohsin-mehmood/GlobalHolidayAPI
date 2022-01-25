@@ -35,7 +35,6 @@ namespace GlobalPublicHolidays.Application.Country.Queries
                                         .Include(c => c.HolidayTypes)
                                         .Include(c => c.Regions);
 
-
             if (!countries.Any())
             {
                 countries = await _sender.Send(new LoadCountriesDataCommand());

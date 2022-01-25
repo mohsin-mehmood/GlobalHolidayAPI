@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GlobalPublicHolidays.Application.Common.Models;
+using GlobalPublicHolidays.Application.Holidays.Queries.Common.Dtos;
 using GlobalPublicHolidays.Application.Holidays.Queries.CountryYearly;
 using GlobalPublicHolidays.Domain.Entities;
 using System.Collections.Generic;
