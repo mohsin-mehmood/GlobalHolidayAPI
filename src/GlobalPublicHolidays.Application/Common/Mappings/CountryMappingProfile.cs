@@ -1,39 +1,20 @@
-﻿using AutoMapper;
-using GlobalPublicHolidays.Application.Common.Models;
+﻿using GlobalPublicHolidays.Application.Common.Models;
+using GlobalPublicHolidays.Application.Country.Queries;
 using GlobalPublicHolidays.Domain.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace GlobalPublicHolidays.Application.Common.Mappings
 {
-    public class CountryMappingProfile : Profile
+    public class CountryMappingProfile : BaseMapperProfile
     {
-
-        private DateTime? ConvertToDateTime(DateApiResponseModel source)
-        {
-
-
-            if (source == null)
-                return null;
-
-            try
-            {
-                return new DateTime(source.Year, source.Month, source.Day);
-            }
-            catch
-            {
-                return null;
-            }
-        }
 
         private IEnumerable<HolidayType> MapToHolidayTypes(IEnumerable<string> apiHolidayTypes, IEnumerable<HolidayType> holidayTypes)
         {
 
             return apiHolidayTypes.Select(sh =>
              {
-                 return holidayTypes.First(ht => ht.Name.Equals(sh));
-
+                 return MapToHolidayType(sh, holidayTypes);
              });
         }
 
@@ -50,6 +31,11 @@ namespace GlobalPublicHolidays.Application.Common.Mappings
                 .ForMember(dest => dest.Regions, opt => opt.MapFrom(src =>
                                        src.Regions.Select(r => new CountryRegion
                                        { CountryCode = src.CountryCode, RegionName = r })));
+
+
+            CreateMap<Domain.Entities.Country, CountryDto>()
+              .ForMember(c => c.HolidayTypes, o => o.MapFrom(src => src.HolidayTypes.Select(ht => ht.Name)))
+              .ForMember(c => c.Regions, o => o.MapFrom(src => src.Regions.Select(r => r.RegionName)));
         }
     }
 }

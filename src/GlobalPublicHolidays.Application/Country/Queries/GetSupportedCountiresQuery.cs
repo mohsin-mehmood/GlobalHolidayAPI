@@ -1,5 +1,5 @@
-﻿using GlobalPublicHolidays.Application.Common.Interfaces;
-using GlobalPublicHolidays.Application.Common.Models;
+﻿using AutoMapper;
+using GlobalPublicHolidays.Application.Common.Interfaces;
 using GlobalPublicHolidays.Application.Country.Commands;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -10,35 +10,38 @@ using System.Threading.Tasks;
 
 namespace GlobalPublicHolidays.Application.Country.Queries
 {
-    public class GetSupportedCountiresQuery : IRequest<IEnumerable<CountryApiResponseModel>>
+    public class GetSupportedCountiresQuery : IRequest<IEnumerable<CountryDto>>
     {
-        public string CountryCode { get; set; }
     }
 
 
-    public class GetSupportedQueryHandler : IRequestHandler<GetSupportedCountiresQuery, IEnumerable<CountryApiResponseModel>>
+    public class GetSupportedQueryHandler : IRequestHandler<GetSupportedCountiresQuery, IEnumerable<CountryDto>>
     {
         private readonly IAppDbContext _appDbContext;
         private readonly ISender _sender;
+        private readonly IMapper _mapper;
 
-        public GetSupportedQueryHandler(IAppDbContext appDbContext, ISender sender)
+        public GetSupportedQueryHandler(IAppDbContext appDbContext, ISender sender, IMapper mapper)
         {
             _appDbContext = appDbContext;
             _sender = sender;
+            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<CountryApiResponseModel>> Handle(GetSupportedCountiresQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<CountryDto>> Handle(GetSupportedCountiresQuery request, CancellationToken cancellationToken)
         {
-            var country = _appDbContext.Countries.AsNoTracking().FirstOrDefault(c => c.Code.Equals(request.CountryCode));
+            IEnumerable<Domain.Entities.Country> countries = _appDbContext.Countries
+                                        .AsNoTracking()
+                                        .Include(c => c.HolidayTypes)
+                                        .Include(c => c.Regions);
 
-
-            if (country == null)
+            if (!countries.Any())
             {
-                return await _sender.Send(new LoadCountriesDataCommand());
+                countries = await _sender.Send(new LoadCountriesDataCommand());
             }
 
 
-            return null;
+            return _mapper.Map<IEnumerable<CountryDto>>(countries);
         }
     }
 }
