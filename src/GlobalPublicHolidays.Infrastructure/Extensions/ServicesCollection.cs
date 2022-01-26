@@ -22,7 +22,7 @@ namespace GlobalPublicHolidays.Infrastructure.Extensions
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                         o => o.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
-                options.EnableSensitiveDataLogging();
+                // options.EnableSensitiveDataLogging();
             });
 
             services.AddScoped<IAppDbContext>(provider => provider.GetService<AppDbContext>());
